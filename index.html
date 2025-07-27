@@ -46,6 +46,26 @@
 .form-button:hover {
     background-color: #94e9a9;
 }
+#form-container {
+            display: none;
+            position: absolute;
+            bottom: 60px;
+            left: 10px;
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid #444;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+            z-index: 9999;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        #form-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
         .ol-control > * {
             background-color: #f8f8f8!important;
             color: #444444!important;
@@ -81,10 +101,27 @@
     <div class="map-title">
         🦐 Shrimp Farming and Mangrove Interaction in Puttalam & Mannar
     </div>
-        <!-- Google Form Button -->
-    <a class="form-button" href="https://forms.gle/YOUR_FORM_LINK_HERE" target="_blank">
-        📋 Share Your Observations
-    </a>
+        <!-- Floating Button -->
+    <div class="form-button" onclick="toggleForm()">📋 Share Your Observations</div>
+
+    <!-- Embedded Google Form Container -->
+    <div id="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+    <!-- Map Container -->
+    <div id="map">
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+
+    <!-- Script to Toggle Form -->
+    <script>
+    function toggleForm() {
+        var formBox = document.getElementById("form-container");
+        formBox.style.display = (formBox.style.display === "none" || formBox.style.display === "") ? "block" : "none";
+    }
         <div id="map">
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
