@@ -107,8 +107,9 @@
 
     <!-- Embedded Custom Formspree Form -->
 <div id="form-container">
-    <form action="https://formspree.io/f/mjkowded" method="POST">
-        <h3 style="margin-top: 0;">📋 Share Your Observations</h3>
+    <div id="form-container">
+        <form action="https://formspree.io/f/mjkowded" method="POST">
+            <h3 style="margin-top: 0;">📋 Observation Form</h3>
 
         <label for="district">District Name:</label><br>
         <input type="text" name="district" id="district" required><br><br>
@@ -135,6 +136,16 @@
                 <div id="popup-content"></div>
             </div>
         </div>
+    <script>
+    function toggleForm() {
+        const formBox = document.getElementById("form-container");
+        if (formBox.style.display === "none" || formBox.style.display === "") {
+            formBox.style.display = "block";
+        } else {
+            formBox.style.display = "none";
+        }
+    }
+    </script>
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
