@@ -111,7 +111,7 @@
 <body>
     <!-- Map Title -->
     <div class="map-title">
-        🦐 Shrimp Farming and Mangrove Interaction in Puttalam & Mannar
+        🦐 Shrimp Farming and Mangrove Interaction in <br>Puttalam & Mannar
     </div>
 
     <!-- Toggle Form Button -->
@@ -125,9 +125,6 @@
             <label for="district">District Name:</label><br>
             <input type="text" name="district" id="district" required><br><br>
 
-             <label for="location">Location:</label><br>
-            <input type="text" name="location" id="location"><br><br>
-
             <label>Have you seen shrimp farms near mangroves?</label><br>
             <input type="radio" name="seen" value="Yes" required> Yes
             <input type="radio" name="seen" value="No"> No<br><br>
@@ -137,6 +134,9 @@
 
             <label for="date">Date of Observation:</label><br>
             <input type="date" name="date" id="date"><br><br>
+
+            <label for="location">Location (GPS/Place):</label><br>
+            <input type="text" name="location" id="location"><br><br>
 
             <button type="submit" style="background-color:#4CAF50; color:white; padding:6px 12px; border:none; border-radius:4px; cursor:pointer;">Submit</button>
         </form>
@@ -185,4 +185,3 @@
     <script src="./resources/qgis2web.js"></script>
 </body>
 </html>
-
