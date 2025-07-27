@@ -95,17 +95,19 @@
             margin: 0;
         }
         </style>
-        <title>Shrimp Farming and Mangroves</title>
-    </head>
-    <body>
-        <!-- Heading -->
+
+    <title>Shrimp Farming and Mangroves</title>
+</head>
+<body>
+    <!-- Map Title -->
     <div class="map-title">
         🦐 Shrimp Farming and Mangrove Interaction in Puttalam & Mannar
     </div>
-        <!-- Floating Button -->
+
+    <!-- Toggle Form Button -->
     <div class="form-button" onclick="toggleForm()">📋 Share Your Observations</div>
 
-    <!-- Embedded Custom Formspree Form -->
+    
 <div id="form-container">
     <div id="form-container">
         <form action="https://formspree.io/f/mjkowded" method="POST">
@@ -130,6 +132,14 @@
         <button type="submit" style="background-color:#4CAF50; color:white; padding:6px 12px; border:none; border-radius:4px; cursor:pointer;">Submit</button>
     </form>
 </div>
+     <!-- Map Container -->
+    <div id="map">
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+    
         <div id="map">
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -137,8 +147,10 @@
             </div>
         </div>
     <script>
+    <!-- Form Toggle Script -->
+    <script>
     function toggleForm() {
-        const formBox = document.getElementById("form-container");
+        var formBox = document.getElementById("form-container");
         if (formBox.style.display === "none" || formBox.style.display === "") {
             formBox.style.display = "block";
         } else {
