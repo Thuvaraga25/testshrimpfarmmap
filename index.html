@@ -168,6 +168,43 @@
     <script src="./resources/ol.js"></script>
     <script src="./resources/ol-layerswitcher.js"></script>
     <script src="resources/photon-geocoder-autocomplete.min.js"></script>
+
+    <!-- CLUSTERING FOR MANGROVES -->
+    <script>
+    // Create a source for clustering
+    var mangroveClusterSource = new ol.source.Cluster({
+        distance: 40,
+        source: new ol.source.Vector({
+            url: 'layers/Mangroves_4.js',
+            format: new ol.format.GeoJSON()
+        })
+    });
+
+    var clusterLayer = new ol.layer.Vector({
+        source: mangroveClusterSource,
+        style: function(feature) {
+            var size = feature.get('features').length;
+            return new ol.style.Style({
+                image: new ol.style.Circle({
+                    radius: 10 + Math.min(size, 20),
+                    stroke: new ol.style.Stroke({
+                        color: '#fff'
+                    }),
+                    fill: new ol.style.Fill({
+                        color: '#228B22'
+                    })
+                }),
+                text: new ol.style.Text({
+                    text: size.toString(),
+                    fill: new ol.style.Fill({
+                        color: '#fff'
+                    })
+                })
+            });
+        }
+    });
+    </script>
+
     <script src="layers/Puttalam_DSD_Boundary_1.js"></script>
     <script src="layers/Mannar_DSD_Boundary_2.js"></script>
     <script src="layers/WilpaththuForest_3.js"></script>
@@ -184,7 +221,4 @@
     <script src="./resources/Autolinker.min.js"></script>
     <script src="./resources/qgis2web.js"></script>
 </body>
-</html>
-
-    </body>
 </html>
